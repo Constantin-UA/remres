@@ -1,6 +1,6 @@
 "use client";
 
-import { allColors } from "@/ads";
+import { allColors, texts } from "@/ads";
 import {
   Box,
   Flex,
@@ -229,19 +229,19 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Главная",
+    label: texts.ukr.navlinks[0],
     href: "#",
   },
   {
-    label: "О нас",
+    label: texts.ukr.navlinks[1],
     href: "#section_about",
   },
   {
-    label: "Преимущества",
+    label: texts.ukr.navlinks[2],
     href: "#section_prime",
   },
   {
-    label: "Контакты",
+    label: texts.ukr.navlinks[3],
     href: "#section_contacts",
   },
 ];
