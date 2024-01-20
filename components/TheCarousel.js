@@ -27,13 +27,14 @@ export default function TheCarousel() {
 
   // These are the images used in the slide
   const cards = [
-    "images/bg/1.jpg",
-    "images/bg/2.jpg",
-    "images/bg/3.jpg",
-    "images/bg/4.jpg",
-    "images/bg/5.jpg",
-    "images/bg/6.jpg",
-    "images/bg/7.jpg",
+    "images/bg/bg1.jpg",
+    "images/bg/bg2.jpg",
+    "images/bg/bg3.jpg",
+    "images/bg/bg4.webp",
+    "images/bg/bg5.jpg",
+    "images/bg/bg6.jpg",
+    "images/bg/bg7.jpg",
+    "images/bg/bg8.jpg",
   ];
 
   return (
