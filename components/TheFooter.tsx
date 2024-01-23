@@ -57,22 +57,23 @@ export default function TheFooter() {
       <Container
         as={Stack}
         maxW={"7xl"}
-        py={4}
+        py={{ base: "0", md: "4" }}
         direction={{ base: "column", md: "row" }}
-        spacing={4}
+        spacing={{ base: "2px", md: "md" }}
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
         <Logo />
         <Stack textAlign={"center"}>
-          <Text color={allColors.navText}>{texts.ukr.footers.rights}</Text>
           <Text
+            fontSize={{ base: "12px", md: "md", lg: "xl" }}
             color={allColors.navText}
-            transition={"all 0.5s ease"}
-            _hover={{
-              color: allColors.buttonText,
-              transform: "scale(1.1)",
-            }}
+          >
+            {texts.ukr.footers.rights}
+          </Text>
+          <Text
+            fontSize={{ base: "12px", md: "md", lg: "xl" }}
+            color={allColors.navText}
           >
             {texts.ukr.footers.erdp}
           </Text>
