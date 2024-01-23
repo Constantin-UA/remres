@@ -23,16 +23,6 @@ export default function SplitWithImage() {
       backgroundColor={allColors.backgroundMain}
       position={"relative"}
       paddingTop={{ base: "60px", md: "0" }}
-      /*       _before={{
-        content: "''",
-        width: "full",
-        height: "50px",
-        position: "absolute",
-        top: -50,
-        left: 0,
-        bg: `linear-gradient(0deg, ${allColors.backgroundMain} 0%, rgba(0,0,0,0) 100%)`,
-        zIndex: 10,
-      }} */
     >
       <Flex flex={1} align={"center"} justify={"center"}>
         <Stack spacing={6} w={"full"} maxW={"lg"}>
@@ -62,6 +52,12 @@ export default function SplitWithImage() {
                   fontSize={{ base: "1.5em", md: "2em" }}
                 >
                   {texts.ukr.contacts.tel}
+                </Text>
+                <Text
+                  color={allColors.subTitle}
+                  fontSize={{ base: "1.5em", md: "2em" }}
+                >
+                  {texts.ukr.contacts.tel1}
                 </Text>
               </Box>
               <Text color={allColors.navText} fontSize={"1.5em"}>

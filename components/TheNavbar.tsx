@@ -39,7 +39,7 @@ export default function TheNavbar() {
       <Container maxW={"container.xl"}>
         <Flex
           minH={"60px"}
-          py={{ base: 2 }}
+          py={{ base: 0 }}
           px={{ base: 4 }}
           align={"center"}
           className="custom-1"
@@ -242,6 +242,10 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: texts.ukr.navlinks[3],
+    href: "#section_partners",
+  },
+  {
+    label: texts.ukr.navlinks[4],
     href: "#section_contacts",
   },
 ];

@@ -15,7 +15,7 @@ const Logo = (props: any) => {
   return (
     <Image
       maxW="400px"
-      maxH={"80px"}
+      maxH={{ base: "60px", md: "80px" }}
       alt={"news image"}
       objectFit="cover"
       src={"/icons/rem_clear.png"}
@@ -23,48 +23,20 @@ const Logo = (props: any) => {
   );
 };
 
-const SocialButton = ({
-  children,
-  label,
-  href,
-}: {
-  children: ReactNode;
-  label: string;
-  href: string;
-}) => {
-  return (
-    <chakra.button
-      rounded={"full"}
-      w={8}
-      h={8}
-      cursor={"pointer"}
-      as={"a"}
-      href={href}
-      display={"inline-flex"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      transition={"background 0.3s ease"}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  );
-};
-
 export default function TheFooter() {
   return (
-    <Box bg={allColors.gradientBg} className="the_footer">
+    <Box bg={allColors.gradientBg} p={"0"}>
       <Container
         as={Stack}
         maxW={"7xl"}
-        py={{ base: "0", md: "4" }}
+        p={"0"}
         direction={{ base: "column", md: "row" }}
-        spacing={{ base: "2px", md: "md" }}
+        spacing={{ base: "0px", md: "md" }}
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
         <Logo />
-        <Stack textAlign={"center"}>
+        <Stack textAlign={"center"} spacing={{ base: "0px", md: "md" }}>
           <Text
             fontSize={{ base: "12px", md: "md", lg: "xl" }}
             color={allColors.navText}
