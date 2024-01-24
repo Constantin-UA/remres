@@ -5,6 +5,7 @@ import TheThird from "@/components/TheThird";
 import TheFooter from "@/components/TheFooter";
 import TheContacts from "@/components/TheContacts";
 import ThePartners from "@/components/ThePartners";
+import { texts } from "@/ads";
 
 export default function HomePage() {
   return (
@@ -13,21 +14,21 @@ export default function HomePage() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
       />
-      <HeroHead />
+      <HeroHead lang={texts.ukr} />
       <div id="section_about">
-        <TheSecond />
+        <TheSecond lang={texts.ukr} />
       </div>
-      <TheThird />
+      <TheThird lang={texts.ukr} />
       <div id="section_partners">
-        <ThePartners />
+        <ThePartners lang={texts.ukr} />
       </div>
       <div id="section_prime">
-        <TheFour />
+        <TheFour lang={texts.ukr} />
       </div>
       <div id="section_contacts">
-        <TheContacts />
+        <TheContacts lang={texts.ukr} />
       </div>
-      <TheFooter />
+      <TheFooter lang={texts.ukr} />
     </main>
   );
 }

@@ -237,12 +237,12 @@ const NAV_ITEMS: Array<NavItem> = [
     href: "#section_about",
   },
   {
-    label: texts.ukr.navlinks[2],
-    href: "#section_prime",
-  },
-  {
     label: texts.ukr.navlinks[3],
     href: "#section_partners",
+  },
+  {
+    label: texts.ukr.navlinks[2],
+    href: "#section_prime",
   },
   {
     label: texts.ukr.navlinks[4],

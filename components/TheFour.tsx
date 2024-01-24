@@ -11,26 +11,26 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { IoMdContacts, IoMdBusiness, IoMdLaptop } from "react-icons/io";
-import { allColors, texts } from "@/ads";
-const features = [
-  {
-    title: texts.ukr.four.content[0].title,
-    text: texts.ukr.four.content[0].subtitle,
-    icon: IoMdLaptop,
-  },
-  {
-    title: texts.ukr.four.content[1].title,
-    text: texts.ukr.four.content[1].subtitle,
-    icon: IoMdBusiness,
-  },
-  {
-    title: texts.ukr.four.content[2].title,
-    text: texts.ukr.four.content[2].subtitle,
-    icon: IoMdContacts,
-  },
-];
+import { allColors } from "@/ads";
 
-export default function TheFour() {
+export default function TheFour({ lang }: any) {
+  const features = [
+    {
+      title: lang.four.content[0].title,
+      text: lang.four.content[0].subtitle,
+      icon: IoMdLaptop,
+    },
+    {
+      title: lang.four.content[1].title,
+      text: lang.four.content[1].subtitle,
+      icon: IoMdBusiness,
+    },
+    {
+      title: lang.four.content[2].title,
+      text: lang.four.content[2].subtitle,
+      icon: IoMdContacts,
+    },
+  ];
   return (
     <Box
       px={{ base: "2", sm: "10" }}
@@ -49,7 +49,7 @@ export default function TheFour() {
           textTransform={"uppercase"}
           textAlign={"center"}
         >
-          {texts.ukr.four.title}
+          {lang.four.title}
         </Heading>
       </Center>
       <Container maxW={"6xl"} mt={10}>

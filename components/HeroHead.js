@@ -9,9 +9,9 @@ import {
   Text,
   Box,
 } from "@chakra-ui/react";
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 
-export default function HeroHead() {
+export default function HeroHead({ lang }) {
   return (
     <Container
       minH={{ base: "calc(100vh - 60px)", md: "calc(100vh - 96px)" }}
@@ -53,7 +53,7 @@ export default function HeroHead() {
                 color={allColors.mainTitleW}
                 textShadow={allColors.shadowText}
               >
-                {texts.ukr.hero.title}
+                {lang.hero.title}
               </Text>
             </Box>
             <Text
@@ -63,7 +63,7 @@ export default function HeroHead() {
               as={"span"}
               className="newFont"
             >
-              {texts.ukr.hero.subtitle}
+              {lang.hero.subtitle}
             </Text>
             <br />{" "}
             <Text
@@ -78,7 +78,7 @@ export default function HeroHead() {
             color={allColors.subTitle}
             textAlign={"center"}
           >
-            {texts.ukr.hero.description}
+            {lang.hero.description}
           </Text>
           <Flex justify={"center"}>
             <Button
@@ -93,7 +93,7 @@ export default function HeroHead() {
               href="#section_contacts"
               boxShadow="xl"
             >
-              {texts.ukr.hero.btn}
+              {lang.hero.btn}
             </Button>
           </Flex>
         </Stack>

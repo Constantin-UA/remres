@@ -1,6 +1,5 @@
 "use client";
 
-import { ReactNode } from "react";
 import {
   Stack,
   Container,
@@ -10,9 +9,9 @@ import {
   SimpleGrid,
   Image,
 } from "@chakra-ui/react";
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 
-export default function TheThird() {
+export default function TheThird({ lang }) {
   return (
     <Box
       py={"10"}
@@ -20,16 +19,6 @@ export default function TheThird() {
       id="service"
       bg={allColors.backgroundWhite}
       minH="100vh"
-      /*  _before={{
-        content: "''",
-        width: "full",
-        height: "40px",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        bg: allColors.beforeBgB,
-        zIndex: 10,
-      }} */
     >
       <Container maxW={"7xl"} zIndex={1} position={"relative"}>
         <Stack direction={{ base: "column", lg: "row" }}>
@@ -46,11 +35,11 @@ export default function TheThird() {
                 textTransform={"uppercase"}
                 textShadow={allColors.shadowText}
               >
-                {texts.ukr.third.title}
+                {lang.third.title}
               </Heading>
             </Box>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-              {texts.ukr.third.content.map((elem, idx) => (
+              {lang.third.content.map((elem, idx) => (
                 <Box key={idx}>
                   <Image
                     alt={"Login Image"}
@@ -77,7 +66,7 @@ export default function TheThird() {
   );
 }
 
-const StatsText = ({ children }: { children: ReactNode }) => (
+const StatsText = ({ children }) => (
   <Text
     textShadow={"rgba(0, 0, 0, 0.35) 0px 5px 15px"}
     as={"span"}

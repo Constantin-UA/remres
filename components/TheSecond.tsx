@@ -1,9 +1,9 @@
 "use client";
 import { Box, Container, Heading, Text, Center } from "@chakra-ui/react";
 
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 
-export default function TheSecond() {
+export default function TheSecond({ lang }: any) {
   return (
     <Box
       px={{ base: "2", sm: "10" }}
@@ -21,7 +21,7 @@ export default function TheSecond() {
           textShadow={allColors.shadowText}
           textTransform={"uppercase"}
         >
-          {texts.ukr.second.title}
+          {lang.second.title}
         </Heading>
       </Center>
       <Container maxW={"6xl"} mt={10}>
@@ -31,7 +31,7 @@ export default function TheSecond() {
           color={allColors.subTitle}
           textAlign={"center"}
         >
-          {texts.ukr.second.subTitle}
+          {lang.second.subTitle}
         </Text>
       </Container>
     </Box>

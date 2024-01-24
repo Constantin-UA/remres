@@ -28,7 +28,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/api/posts/route.js",
-    "components/TheCarousel.js"
+    "components/TheCarousel.js",
+    "components/TheThird.js"
   ],
   "exclude": ["node_modules"]
 }

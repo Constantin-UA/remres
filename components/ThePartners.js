@@ -11,11 +11,11 @@ import {
   VStack,
   Text,
 } from "@chakra-ui/react";
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 
 import { ThePartnersLogoCarousel } from "@/components/ThePartnersLogoCarousel";
 
-const ThePartners = () => {
+const ThePartners = ({ lang }) => {
   return (
     <Box
       px={{ base: "2", sm: "10" }}
@@ -34,12 +34,12 @@ const ThePartners = () => {
           textTransform={"uppercase"}
           textAlign={"center"}
         >
-          {texts.ukr.partners.title}
+          {lang.partners.title}
         </Heading>
       </Center>
       <Container maxW={"6xl"} mt={10}>
         <SimpleGrid columns={{ base: 1 }} spacing={10}>
-          {texts.ukr.partners.partnersList.map((partner, idx) => (
+          {lang.partners.partnersList.map((partner, idx) => (
             <HStack key={idx} align={"top"}>
               <Box px={{ base: 2, sm: 0 }}></Box>
               <VStack align={"start"}>
@@ -63,9 +63,7 @@ const ThePartners = () => {
             </HStack>
           ))}
           <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
-            <ThePartnersLogoCarousel
-              partners={texts.ukr.partners.partnersList}
-            />
+            <ThePartnersLogoCarousel partners={lang.partners.partnersList} />
           </Box>
         </SimpleGrid>
       </Container>

@@ -1,5 +1,5 @@
 "use client";
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 
 import {
   Box,
@@ -23,7 +23,7 @@ const Logo = (props: any) => {
   );
 };
 
-export default function TheFooter() {
+export default function TheFooter({ lang }: any) {
   return (
     <Box bg={allColors.gradientBg} p={"0"}>
       <Container
@@ -41,13 +41,13 @@ export default function TheFooter() {
             fontSize={{ base: "12px", md: "md", lg: "xl" }}
             color={allColors.navText}
           >
-            {texts.ukr.footers.rights}
+            {lang.footers.rights}
           </Text>
           <Text
             fontSize={{ base: "12px", md: "md", lg: "xl" }}
             color={allColors.navText}
           >
-            {texts.ukr.footers.erdp}
+            {lang.footers.erdp}
           </Text>
         </Stack>
         <Stack direction={"row"} spacing={6}></Stack>

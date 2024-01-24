@@ -1,5 +1,5 @@
 "use client";
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 import {
   Box,
   Image,
@@ -13,7 +13,7 @@ import {
 
 import TheMap from "@/components/TheMap";
 
-export default function SplitWithImage() {
+export default function TheContacts({ lang }) {
   const remresurs = [48.36587927491042, 35.081880468142174];
 
   return (
@@ -31,7 +31,7 @@ export default function SplitWithImage() {
             textAlign={"center"}
             color={allColors.navText}
           >
-            {texts.ukr.contacts.title}
+            {lang.contacts.title}
           </Heading>
           <Flex direction={{ base: "column", md: "row" }}>
             <Flex
@@ -44,45 +44,45 @@ export default function SplitWithImage() {
             >
               <Flex flex={1} direction={"column"} gap={2}></Flex>
               <Text color={allColors.navText} fontSize={"1.5em"}>
-                {texts.ukr.contacts.teltext}
+                {lang.contacts.teltext}
               </Text>
               <Box>
                 <Text
                   color={allColors.subTitle}
                   fontSize={{ base: "1.5em", md: "2em" }}
                 >
-                  {texts.ukr.contacts.tel}
+                  {lang.contacts.tel}
                 </Text>
                 <Text
                   color={allColors.subTitle}
                   fontSize={{ base: "1.5em", md: "2em" }}
                 >
-                  {texts.ukr.contacts.tel1}
+                  {lang.contacts.tel1}
                 </Text>
               </Box>
               <Text color={allColors.navText} fontSize={"1.5em"}>
-                {texts.ukr.contacts.subtitle}
+                {lang.contacts.subtitle}
               </Text>
               <Box>
                 <Text
                   color={allColors.subTitle}
                   fontSize={{ base: "1.5em", md: "2em" }}
                 >
-                  {texts.ukr.contacts.mail}
+                  {lang.contacts.mail}
                 </Text>
               </Box>
               <Text color={allColors.navText} fontSize={"1.5em"}>
-                {texts.ukr.contacts.description}
+                {lang.contacts.description}
               </Text>
               <Text color={allColors.subTitle} textAlign={"center"}>
-                {texts.ukr.contacts.adres}
+                {lang.contacts.adres}
               </Text>
             </Flex>
           </Flex>
         </Stack>
       </Flex>
       <Grid flex={1}>
-        <TheMap position={remresurs} title={texts.ukr.contacts.adres} />
+        <TheMap position={remresurs} title={lang.contacts.adres} />
       </Grid>
     </Stack>
   );
