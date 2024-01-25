@@ -32,7 +32,7 @@
     "react-icons": "^4.10.1",
     "react-leaflet": "^4.2.1",
     "react-slick": "^0.29.0",
-    "swr": "^2.2.2",
+    "swr": "^2.2.4",
     "typescript": "5.1.6"
   },
   "devDependencies": {

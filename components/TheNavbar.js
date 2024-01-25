@@ -1,6 +1,5 @@
 "use client";
-
-import { allColors, texts } from "@/ads";
+import { allColors } from "@/ads";
 import {
   Box,
   Flex,
@@ -13,16 +12,50 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useColorModeValue,
-  chakra,
   useDisclosure,
-  VisuallyHidden,
+  Center,
+  Button,
   Image,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
-export default function TheNavbar() {
+export default function TheNavbar({ lang, setToggler }) {
   const { isOpen, onToggle } = useDisclosure();
+  const [swicher, setSwicher] = useState(false);
+  const [swichButton, setSwichButton] = useState("eng");
+
+  const NAV_ITEMS = [
+    {
+      label: lang.navlinks[0],
+      href: "#",
+    },
+    {
+      label: lang.navlinks[1],
+      href: "#section_about",
+    },
+    {
+      label: lang.navlinks[3],
+      href: "#section_partners",
+    },
+    {
+      label: lang.navlinks[2],
+      href: "#section_prime",
+    },
+    {
+      label: lang.navlinks[4],
+      href: "#section_contacts",
+    },
+  ];
+
+  useEffect(() => {
+    if (swicher) {
+      setSwichButton("ua");
+    } else {
+      setSwichButton("eng");
+    }
+  }, [swicher]);
+
   return (
     <Box
       w="100%"
@@ -73,7 +106,7 @@ export default function TheNavbar() {
               display={{ base: "none", md: "flex" }}
               justifyContent={"center"}
             >
-              <DesktopNav />
+              <DesktopNav NAV_ITEMS={NAV_ITEMS} />
             </Flex>
             <Image
               display={{ base: "none", md: "block" }}
@@ -84,17 +117,29 @@ export default function TheNavbar() {
               src={"/icons/rem_clear.png"}
               justifySelf={"center"}
             />
+            <Center>
+              <Button
+                variant="outline"
+                size="xs"
+                onClick={() => {
+                  setToggler(!swicher);
+                  setSwicher(!swicher);
+                }}
+              >
+                {swichButton}
+              </Button>
+            </Center>
           </Box>
         </Flex>
       </Container>
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav NAV_ITEMS={NAV_ITEMS} />
       </Collapse>
     </Box>
   );
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({ NAV_ITEMS }) => {
   return (
     <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -140,7 +185,7 @@ const DesktopNav = () => {
   );
 };
 
-const MobileNav = () => {
+const MobileNav = ({ NAV_ITEMS }) => {
   return (
     <Stack
       bg={allColors.gradientBg}
@@ -164,7 +209,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -219,33 +264,3 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     </Stack>
   );
 };
-
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: texts.ukr.navlinks[0],
-    href: "#",
-  },
-  {
-    label: texts.ukr.navlinks[1],
-    href: "#section_about",
-  },
-  {
-    label: texts.ukr.navlinks[3],
-    href: "#section_partners",
-  },
-  {
-    label: texts.ukr.navlinks[2],
-    href: "#section_prime",
-  },
-  {
-    label: texts.ukr.navlinks[4],
-    href: "#section_contacts",
-  },
-];
